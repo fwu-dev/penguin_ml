@@ -15,6 +15,10 @@ st.write("""This app uses 6 inputs to predict the species of penguin using
 a model built on the Palmer Penguins dataset. Use the form below
 to get started!
 """)
+password_guess = st.text_input("What is the password?")
+if password_guess != 'streamlit_password':
+    st.stop()
+
 penguin_file = st.file_uploader("Upload your own penguin data")
 
 if penguin_file is None:
